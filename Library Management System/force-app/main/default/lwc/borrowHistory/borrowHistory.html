@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Book History">
+        <template if:true={bookBorrowHistories}>
+            <lightning-datatable
+                key-field="Id"
+                data={bookBorrowHistories}
+                columns={columns}
+            >
+           </lightning-datatable>
+           
+        </template>
+    </lightning-card>
+</template> 

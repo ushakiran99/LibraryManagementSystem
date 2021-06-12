@@ -1,0 +1,27 @@
+<template>
+    
+    <div class="slds-var-m-bottom_small">
+        <lightning-input type="text"
+            value={searchValue}
+            label="Search Using User ID"
+            placeholder="search here..."
+            onchange={searchKeyword}
+        >
+        </lightning-input>
+</div>
+<div>
+    <!--Show Search Button-->
+    <lightning-button variant="Success" label="Search" title="Succesfull Action" onclick={handleSearchKeyword} class="slds-var-m-bottom_smal"
+    ></lightning-button>
+</div>
+<div style="height: 300px">
+    <lightning-datatable
+            key-field="id"
+            data={withreturnData}
+            columns={columns}
+           
+        >
+       </lightning-datatable>
+</div>
+
+</template>

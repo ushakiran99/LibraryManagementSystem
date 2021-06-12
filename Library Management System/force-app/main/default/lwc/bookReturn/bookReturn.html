@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Books to be returned">
+        <template if:true={bookBorrowHistories}>
+            <lightning-datatable
+                key-field="Id"
+                data={bookBorrowHistories}
+                columns={columns}
+            >
+           </lightning-datatable>
+           <lightning-button label='Return' variant='Brand'></lightning-button>
+           
+        </template>
+    </lightning-card>
+</template> 

@@ -1,0 +1,41 @@
+<template>
+    <div>
+        <lightning-radio-group name="radioGroup"
+                           label="Search By"
+                           options={options}
+                           value={searchType}
+                           onchange={handleRadioChange}
+                           required
+                           type="button">
+        </lightning-radio-group>
+    </div>
+    <div class="slds-var-m-bottom_small">
+            <lightning-input type="text"
+                value={searchValue}
+                label="Search Book"
+                placeholder="search here..."
+                onchange={searchKeyword}
+            >
+            </lightning-input>
+    </div>
+    <div>
+        <!--Show Search Button-->
+        <lightning-button variant="Success" label="Search" title="Succesfull Action" onclick={handleSearchBook} class="slds-var-m-bottom_smal"
+        ></lightning-button>
+    </div>
+    <div style="height: 300px">
+        <lightning-datatable
+                key-field="id"
+                data={withreturnData}
+                columns={columns}
+                selected-rows={selectedRows}
+                onrowselection={getSelectedName}
+            >
+           </lightning-datatable>
+    </div>
+    <div>
+        <!--Show Borrow Button-->
+        <lightning-button variant="Success" label="Borrow" title="Succesfull Action" onclick={handleBorrowBook} class="slds-var-m-bottom_smal"
+        ></lightning-button>
+    </div>
+</template>

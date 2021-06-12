@@ -1,0 +1,20 @@
+<template>
+    <lightning-input
+        type="search"
+        onchange={searchKeyword}
+        variant="label-hidden"
+        class="slds-m-bottom_small"
+        label="Search"
+        placeholder="Search for books"
+        value={searchValue}></lightning-input>
+
+        <lightning-datatable
+                key-field="Id"
+                data={booksRecord}
+                columns={columns}
+                onrowselection={getSelectedName}
+               
+            >
+           </lightning-datatable>
+
+</template>

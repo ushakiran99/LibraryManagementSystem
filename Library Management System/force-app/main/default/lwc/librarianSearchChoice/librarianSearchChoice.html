@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Search Options">
+    <lightning-button-group>
+        <lightning-button label="Search by User ID" onclick={callSearchById}></lightning-button><br>
+        
+
+        <lightning-button label="Search by Book" onclick={callSearchByBook}></lightning-button><br>
+        
+    </lightning-button-group>
+
+    <c-search-by-id if:true={showSearchComponent}></c-search-by-id>
+
+    <c-search-by-member if:true={bookSearchComponent}></c-search-by-member>
+</lightning-card>
+</template>
