@@ -5,9 +5,11 @@
                 key-field="Id"
                 data={bookBorrowHistories}
                 columns={columns}
+                selected-rows={selectedRows}
+                onrowselection={getSelectedName}
             >
            </lightning-datatable>
-           <lightning-button label='Return' variant='Brand'></lightning-button>
+           <lightning-button label='Return' variant='Brand' onclick={handleReturnBook}></lightning-button>
            
         </template>
     </lightning-card>

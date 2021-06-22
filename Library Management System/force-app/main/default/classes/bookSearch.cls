@@ -28,6 +28,7 @@ public static void borrowBooks(List<Book__c> books, Id currentUser){
         List<Book__c> updateBooks = new List<Book__c>();
         List<Borrow_History__c> bookBorrowInfos = new List<Borrow_History__c>();
         for(Book__c b: books){
+            
             //To update Book Status
             Book__c updateBook = new Book__c();
             updateBook.Id = b.Id;
@@ -43,7 +44,8 @@ public static void borrowBooks(List<Book__c> books, Id currentUser){
            
             bookBorrowInfo.IsBorrowActive__c = true;
             bookBorrowInfos.add(bookBorrowInfo);
-        }
+        
+    }
         update updateBooks;
         insert bookBorrowInfos;
         }

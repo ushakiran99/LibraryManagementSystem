@@ -9,7 +9,7 @@ const COLUMNS = [
     { label: 'Issue date',fieldName: 'Issued_Date__c', type: 'Date' },
     { label: 'Return date', fieldName: 'Return_Date__c', type: 'Date'},
     { label: 'Book', fieldName: 'Book__r.Book_Name__c', type: 'lookup' },
-    { label: 'Status', fieldName: 'Book__r.Status__c', type: 'picklist' }
+    { label: 'Status', fieldName: 'Book_Status__c', type: 'picklist' }
 
  
 ];
@@ -29,9 +29,10 @@ export default class BorrowHistory extends LightningElement {
             record => Object.assign(
                 {   "Book__r.Book_Name__c": record.Book__r.Book_Name__c, 
                     "User__r.Name": record.User__r.Name,
-                    "Book__r.Status__c": record.Book__r.Status__c
+                    //"Book__r.Status__c": record.Book__r.Status__c
                 },record
             ));
+            
            
         }
         else if (error) {
@@ -39,6 +40,7 @@ export default class BorrowHistory extends LightningElement {
              this.bookBorrowHistories = undefined;
         }
         refreshApex(this.bookBorrowHistories);
+       
     }
   
   

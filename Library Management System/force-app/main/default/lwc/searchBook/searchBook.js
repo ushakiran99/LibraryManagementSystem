@@ -95,6 +95,7 @@ export default class SearchBook extends LightningElement {
      getSelectedName(event){
         this.selectedBooks = event.detail.selectedRows;
         
+        
      }
 
 
@@ -133,7 +134,7 @@ export default class SearchBook extends LightningElement {
             this.error = error;
             this.dispatchEvent(
                 new ShowToastEvent({
-                    title: 'Not Update Borrowed Status',
+                    title: 'Cannot borrow the book',
                     message: reduceErrors(error).join(', '),
                     variant: 'error'
                 })
